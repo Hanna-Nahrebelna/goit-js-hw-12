@@ -23,3 +23,163 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+.form {
+  padding-left: 35%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  gap: 24px;
+}
+
+.gallery {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo-information-container {
+  display: flex;
+  gap: 20px;
+  background: #FFF;
+  padding-left: 20px;
+  padding-top: 4px;
+}
+
+.photos-list-item {
+  transition: 0.7s;
+  border: 2px solid #808080;
+}
+
+
+.photo {
+  display: block;
+  width: 360px;
+  height: 240px;
+  contain: content;
+}
+
+input {
+  outline: 0;
+  outline-offset: 0;
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+button {
+  width: 91px;
+  height: 57px;
+  border-radius: 8px;
+  background-color: #4E75FF;
+  padding: 8px 16px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  color: #eae212;
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+
+.loader:after {
+  color: #FF3D00;
+  transform: rotateY(70deg);
+  animation-delay: .4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+
+  0%,
+  100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+  }
+
+  12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+  }
+
+  25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+  }
+
+  37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+  }
+
+  50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+  }
+
+  62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+  }
+
+  75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+  }
+
+  87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
+  }
+}
+
+.is-hidden {
+  display: none;
+}
+
+.btnMore {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 20px;
+  width: 125px;
+  height: 40px;
+}
+
+
