@@ -41,7 +41,7 @@ async function validInput(event){
         message: "Please fill in the field for search!",
         position: 'topRight'
       });
-      deleteLoader();      
+      
       return
     }
   try {
@@ -76,7 +76,7 @@ async function validInput(event){
 
 // === LOAD MORE ===//
 
-function deliteLoadMore() {
+function deleteLoadMore() {
   loadMoreBtn.classList.remove("is-hidden");
 }
 
@@ -89,7 +89,7 @@ function infoBtnLoadMore() {
   if (page >= totalPages) {
     yesLoadMore();
   } else {
-      deliteLoadMore();
+      deleteLoadMore();
   }
 }
   function scroll() {
