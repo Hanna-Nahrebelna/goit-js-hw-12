@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function fetchImages(query,page) {
+export async function fetchImages(query, page) {
 
 
     const BASE_URL = "https://pixabay.com/api/";

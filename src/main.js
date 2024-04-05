@@ -27,37 +27,37 @@ function hideLoader() {
 
 
 form.addEventListener("submit", validInput);
-
 async function validInput(event){
     event.preventDefault();
 
     galleryList.innerHTML = "";
-
-    page = 1
-
+    page = 1;
     query = event.target.elements.search.value.trim();
-
     showLoader();
   
-    if (query === "") {
-      iziToast.warning({
-          color: 'yellow',
-          message: "Please fill in the field for search!",
-          position: 'topRight'
-      })
+  if (query === "") {
+        iziToast.warning({
+        color: 'yellow',
+        message: "Please fill in the field for search!",
+        position: 'topRight'
+      });
+      deleteLoader();      
       return
     }
-    try {
-        const data = await fetchImages(query, page)
-        
-    if (data.hits.length === 0) {
-        iziToast.error({
+  try {
+    const data = await fetchImages(query, page)    
+        if (data.hits.length === 0) {
+          iziToast.error({
           message: "Sorry, there are no images matching your search query. Please try again!",
           backgroundColor: "red",
           messageColor: "white",
           position: 'topRight'})
         }
-        totalPages = Math.ceil(data.totalHits / perPage);
+      totalPages = Math.ceil(data.totalHits / perPage);
+        if (data.hits.length < 15) {
+              yesLoadMore();
+          }    
+          
         renderImages(data.hits);
         event.target.reset();
     } catch (error) {
@@ -88,7 +88,6 @@ function infoBtnLoadMore() {
 
   if (page >= totalPages) {
     yesLoadMore();
-
   } else {
       deliteLoadMore();
   }
@@ -116,7 +115,7 @@ async function clickRequest() {
         yesLoadMore();
 
           iziToast.info({
-              title: 'Info:',
+          title: 'Info:',
           message: `You have reached the end of the list`,
           position: 'topRight',
           })
@@ -146,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", function () {
     if (window.pageYOffset > 300){
       backToTop.style.display = "block";
-    }else{
+    } else {
       backToTop.style.display = "none";
     }
   });
@@ -157,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
   backToTop.addEventListener("click", function (event) {
     event.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  });  
 });
 
 //=== SCROLL BTN ===//
