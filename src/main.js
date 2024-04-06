@@ -133,30 +133,3 @@ async function clickRequest() {
   infoBtnLoadMore();
   hideLoader();
 }
-
-
-// ==== SCROLL BTN ====//
-
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTop = document.getElementById("back-to-top");
- 
-  // Button for loading
-
-  window.addEventListener("scroll", function () {
-    if (window.pageYOffset > 300){
-      backToTop.style.display = "block";
-    } else {
-      backToTop.style.display = "none";
-    }
-  });
-
-
-  // Button for loading slow scroll 
-
-  backToTop.addEventListener("click", function (event) {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });  
-});
-
-//=== SCROLL BTN ===//
