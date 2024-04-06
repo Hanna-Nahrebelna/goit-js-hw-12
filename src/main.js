@@ -42,7 +42,7 @@ async function validInput(event){
         position: 'topRight'
       });
       
-      return
+      return;
     }
   try {
     const data = await fetchImages(query, page)    
