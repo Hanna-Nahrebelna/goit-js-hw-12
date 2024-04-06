@@ -172,6 +172,10 @@ button {
 }
 
 .btnMore {
+  width: 120px;
+}
+
+.stylesBtnMore {
   display: flex;
   align-items: center;
   margin-left: auto;
@@ -182,4 +186,3 @@ button {
   height: 40px;
 }
 
- 
